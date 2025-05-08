@@ -1,43 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | BlackHatNotes</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | BlackHatters</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .fade-in {
+      animation: fadeIn 1.2s ease-in forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
-<body class="bg-black text-white">
-    <header class="bg-black p-5 shadow fixed w-full z-50">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl text-green-400 font-bold">BlackHatNotes</h1>
-            <nav class="space-x-6">
-                <a href="index.html" class="hover:text-green-400">Home</a>
-                <a href="notes.html" class="hover:text-green-400">Notes</a>
-                <a href="services.html" class="hover:text-green-400">Services</a>
-                <a href="about.html" class="hover:text-green-400">About</a>
-                <a href="contact.html" class="hover:text-green-400">Contact</a>
-            </nav>
-        </div>
-    </header>
+<body class="bg-black text-white font-sans leading-relaxed tracking-wide">
+  <header class="bg-black p-5 shadow fixed w-full z-50">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl text-green-400 font-bold">BlackHatters</h1>
+      <nav class="space-x-6">
+        <a href="index.html" class="hover:text-green-400">Home</a>
+        <a href="notes.html" class="hover:text-green-400">Notes</a>
+        <a href="services.html" class="hover:text-green-400">Services</a>
+        <a href="about.html" class="hover:text-green-400 font-semibold underline">About</a>
+        <a href="contact.html" class="hover:text-green-400">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-    <section class="container mx-auto px-6 py-20 text-center">
-        <h1 class="text-4xl text-green-300 font-bold mb-6">Our Mission</h1>
-        <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">
-            BlackHatNotes was created to give organizations a true offensive security partner. 
-            We believe in doing deep technical work, not surface scans. Our team has worked with Fortune 500s, financial institutions, and defense agencies to uncover critical risks before attackers do.
-        </p>
+  <section class="container mx-auto px-6 py-28 text-center space-y-16 fade-in">
+    <!-- Mission Box -->
+    <div class="glass p-10 rounded-2xl shadow-lg hover:scale-105 transform transition-all duration-300">
+      <h1 class="text-4xl text-green-300 font-bold mb-4">🛡️ Our Mission</h1>
+      <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+        BlackHatters exists to be your elite offensive security force. We’re not here for surface scans or fluff reports. 
+        We're the ones called in when security matters. Our team helps Fortune 500s, financial giants, and defense entities detect the undetectable—before attackers do.
+      </p>
+    </div>
 
-        <h3 class="text-2xl text-green-400 mb-4">🔥 Our Creds</h3>
-        <ul class="text-gray-300 list-disc pl-5 space-y-2">
-            <li>OSCP, OSCE, CRTP, CISSP certified professionals</li>
-            <li>Disclosed 25+ critical CVEs in top-tier software</li>
-            <li>Delivered 200+ pentests & red team exercises worldwide</li>
-        </ul>
-    </section>
+    <!-- Creds Box -->
+    <div class="glass p-10 rounded-2xl shadow-lg hover:scale-105 transform transition-all duration-300">
+      <h2 class="text-3xl text-green-400 font-semibold mb-4">💼 Our Credentials</h2>
+      <ul class="text-left text-gray-300 max-w-xl mx-auto list-disc pl-6 space-y-3 text-lg">
+        <li><span class="text-green-400">Top Certs:</span> OSCP, OSCE, CRTP, CISSP certified operators</li>
+        <li><span class="text-green-400">25+ CVEs:</span> Disclosed vulnerabilities in major platforms</li>
+        <li><span class="text-green-400">200+ Engagements:</span> Global red team, adversary emulation & pentests</li>
+      </ul>
+    </div>
 
-    <footer class="bg-black text-center text-gray-300 py-4">
-        <p>&copy; 2025 BlackHatNotes - All Rights Reserved</p>
-    </footer>
+    <!-- Philosophy Box -->
+    <div class="glass p-10 rounded-2xl shadow-lg hover:scale-105 transform transition-all duration-300">
+      <h2 class="text-3xl text-green-400 font-semibold mb-4">🧠 Why BlackHatters?</h2>
+      <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+        Because you don’t need another security vendor — you need a partner who thinks like a threat actor. 
+        We stay ahead with real-world tactics, bleeding-edge tools, and a relentless commitment to uncovering flaws before they become breaches.
+      </p>
+    </div>
+  </section>
+
+  <footer class="bg-black text-center text-gray-300 py-6 mt-10 border-t border-gray-800">
+    <p>&copy; 2025 BlackHatters — All Rights Reserved</p>
+  </footer>
 </body>
 </html>
