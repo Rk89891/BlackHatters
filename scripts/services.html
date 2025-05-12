@@ -1,89 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Services | BlackHatters</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="styles.css"/>
-  <style>
-    .glass {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    .fade-in {
-      animation: fadeIn 1.2s ease-in forwards;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <title>Settings | BlackHatters</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
 </head>
-<body class="bg-black text-white font-sans leading-relaxed tracking-wide">
-  <header class="bg-black p-5 shadow fixed w-full z-50">
+<body class="bg-gray-900 text-white">
+  <header class="bg-black p-5">
     <div class="container mx-auto flex justify-between items-center">
       <h1 class="text-2xl text-green-400 font-bold">BlackHatters</h1>
       <nav class="space-x-6">
         <a href="index.html" class="hover:text-green-400">Home</a>
         <a href="notes.html" class="hover:text-green-400">Notes</a>
-        <a href="services.html" class="hover:text-green-400 font-semibold underline">Services</a>
         <a href="about.html" class="hover:text-green-400">About</a>
         <a href="contact.html" class="hover:text-green-400">Contact</a>
+        <a href="settings.html" class="hover:text-green-400">Settings</a>
         <a href="mothersday.html" class="text-pink-400 font-semibold underline">❤️ Mother's Day</a>
 
       </nav>
     </div>
   </header>
 
-  <section class="container mx-auto px-6 py-28 text-center fade-in">
-    <h1 class="text-4xl font-bold text-green-300 mb-12">🎯 Professional Services</h1>
-    <div class="grid md:grid-cols-2 gap-10">
-      <!-- Penetration Testing -->
-      <div class="glass p-6 rounded-xl shadow-lg transition-all hover:scale-105 duration-300">
-        <h2 class="text-2xl text-green-400 mb-2">🔍 Penetration Testing</h2>
-        <p class="text-gray-300">
-          From external black-box to internal white-box — we simulate real adversaries across web, mobile, cloud, and network vectors.
-        </p>
-      </div>
+  <main class="container mx-auto px-5 py-10">
+    <h2 class="text-3xl text-green-300 mb-4">Settings</h2>
+    <label class="inline-flex items-center space-x-2">
+      <input type="checkbox" id="darkModeToggle" class="form-checkbox h-5 w-5 text-green-500">
+      <span>Enable Dark Mode</span>
+    </label>
+  </main>
 
-      <!-- Red Team -->
-      <div class="glass p-6 rounded-xl shadow-lg transition-all hover:scale-105 duration-300">
-        <h2 class="text-2xl text-green-400 mb-2">🛡️ Red Team Operations</h2>
-        <p class="text-gray-300">
-          Full-scope adversary emulation. Initial access to domain dominance with stealth, persistence, and live exfiltration.
-        </p>
-      </div>
-
-      <!-- Code Reviews -->
-      <div class="glass p-6 rounded-xl shadow-lg transition-all hover:scale-105 duration-300">
-        <h2 class="text-2xl text-green-400 mb-2">💻 Secure Code Reviews</h2>
-        <p class="text-gray-300">
-          Deep dive audits across production-critical apps: Python, Go, JavaScript, infrastructure-as-code & more.
-        </p>
-      </div>
-
-      <!-- Training -->
-      <div class="glass p-6 rounded-xl shadow-lg transition-all hover:scale-105 duration-300">
-        <h2 class="text-2xl text-green-400 mb-2">📚 Cybersecurity Training</h2>
-        <p class="text-gray-300">
-          Tactical training. Hands-on labs in exploit writing, malware analysis, red team tactics, and incident response.
-        </p>
-      </div>
-    </div>
-
-    <!-- CTA Button -->
-    <div class="mt-16">
-      <a href="contact.html" class="bg-green-500 hover:bg-green-600 text-black font-bold py-3 px-8 rounded-xl shadow-lg transition-all duration-300">
-        📞 Book a Call with Us
-      </a>
-    </div>
-  </section>
-
-  <footer class="bg-black text-center text-gray-300 py-6 mt-10 border-t border-gray-800">
-    <p>&copy; 2025 BlackHatters — All Rights Reserved</p>
-  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
